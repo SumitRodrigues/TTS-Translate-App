@@ -5,13 +5,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles.css" />
-    <title>TTS & Translation App</title>
+    <style>
+        /* Keyframes for moving objects in the background */
+        @keyframes moveObjects1 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); }
+            50% { transform: translateY(-20px) translateX(20px) rotate(180deg); }
+            100% { transform: translateY(0) translateX(0) rotate(360deg); }
+        }
+
+        @keyframes moveObjects2 {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); }
+            50% { transform: translateY(30px) translateX(-30px) rotate(-180deg); }
+            100% { transform: translateY(0) translateX(0) rotate(360deg); }
+        }
+
+        /* Background container */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Floating objects */
+        .floating-object {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(20px);
+        }
+
+        /* First set of floating objects */
+        .floating-object.one {
+            background: linear-gradient(45deg, #ff00ff, #ff9900);
+            top: 10%;
+            left: 15%;
+            animation: moveObjects1 5s infinite alternate ease-in-out;
+        }
+
+        .floating-object.two {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            top: 70%;
+            left: 80%;
+            animation: moveObjects2 7s infinite alternate ease-in-out;
+        }
+
+        /* Second set of floating objects */
+        .floating-object.three {
+            background: linear-gradient(45deg, #ff0000, #ffcc00);
+            top: 40%;
+            left: 60%;
+            animation: moveObjects1 6s infinite alternate ease-in-out;
+        }
+
+        .floating-object.four {
+            background: linear-gradient(45deg, #00ff99, #0099ff);
+            top: 85%;
+            left: 30%;
+            animation: moveObjects2 8s infinite alternate ease-in-out;
+        }
+
+        /* Glowing border for the main div */
+        @keyframes movingBlur {
+            0% { transform: translateX(-10px) translateY(-10px); opacity: 0.8; }
+            50% { transform: translateX(10px) translateY(10px); opacity: 1; }
+            100% { transform: translateX(-10px) translateY(-10px); opacity: 0.8; }
+        }
+
+        .glowing-border::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #ff00ff, #ff9900, #00ffff);
+            border-radius: 12px;
+            filter: blur(20px);
+            z-index: -1;
+            animation: movingBlur 3s infinite alternate ease-in-out;
+        }
+    </style>
+    <title>TTS Translator App</title>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white shadow-md rounded-lg p-6 max-w-md w-full">
-        <h1 class="text-2xl font-semibold text-gray-800 text-center mb-4">
+<body class="bg-black flex items-center justify-center h-screen relative">
+    <!-- Background Animation Container -->
+    <div class="background-animation">
+        <div class="floating-object one"></div>
+        <div class="floating-object two"></div>
+        <div class="floating-object three"></div>
+        <div class="floating-object four"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="bg-gray-800 shadow-md rounded-lg p-6 max-w-md w-full relative glowing-border">
+        <h1 class="text-2xl font-semibold text-white text-center mb-4">
             TTS & Translation
         </h1>
 
@@ -22,14 +116,14 @@
 
         <!-- Language Selection -->
         <div class="mt-4">
-            <label for="languageSelect" class="block text-sm font-medium text-gray-700 mb-2">Select Language</label>
+            <label for="languageSelect" class="block text-sm font-medium text-white mb-2">Select Language</label>
             <select id="languageSelect"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
         </div>
 
         <!-- Voice Selection -->
         <div class="mt-4">
-            <label for="voiceSelect" class="block text-sm font-medium text-gray-700 mb-2">Select Voice</label>
+            <label for="voiceSelect" class="block text-sm font-medium text-white mb-2">Select Voice</label>
             <select id="voiceSelect"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="default">Default Voice</option>
@@ -39,11 +133,13 @@
         </div>
 
         <!-- Play Button -->
-        <button
-            class="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 hover:scale-105 hover:shadow-lg"
-            id="playButton">
-            Play Text
-        </button>
+        <div class="relative mt-6 flex justify-center">
+            <button
+                class="relative z-10 w-full bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 hover:scale-105 hover:shadow-lg play-button"
+                id="playButton">
+                Play Text
+            </button>
+        </div>
     </div>
 
     <script src="script.js"></script>
