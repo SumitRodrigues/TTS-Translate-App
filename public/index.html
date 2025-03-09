@@ -6,14 +6,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* Background Image */
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 90deg;
+            inherits: true;
+        }
+
+        @property --gradX {
+            syntax: '<percentage>';
+            initial-value: 50%;
+            inherits: true;
+        }
+
+        @property --gradY {
+            syntax: '<percentage>';
+            initial-value: 0%;
+            inherits: true;
+        }
+
         body {
-            background: url('https://images.pexels.com/photos/210546/pexels-photo-210546.jpeg?w=940&h=650&auto=compress&cs=tinysrgb') no-repeat center center/cover;
+            font-family: Raleway, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+            background-color: rgba(10, 12, 18, 1);
+            color: white;
+            min-height: 100vh;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            position: relative;
+        }
+
+        :root {
+            --d: 2500ms;
+            --angle: 90deg;
+            --gradX: 100%;
+            --gradY: 50%;
+            --c1: rgba(168, 239, 255, 1);
+            --c2: rgba(168, 239, 255, 0.1);
         }
 
         /* Blurred Background Effect */
@@ -29,17 +66,32 @@
             z-index: -1;
         }
 
-        /* Card Style */
+        /* Main TTS Container with Animated Border */
         .tts-container {
             position: relative;
-            width: 350px;
-            padding: 30px;
+            width: fit-content;
+            padding: 2rem;
             border-radius: 12px;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
             color: white;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 0.35rem solid;
+            border-image: conic-gradient(
+                from var(--angle),
+                var(--c2),
+                var(--c1) 0.1turn,
+                var(--c1) 0.15turn,
+                var(--c2) 0.25turn
+            ) 30;
+            animation: borderRotate var(--d) linear infinite forwards;
+        }
+
+        @keyframes borderRotate {
+            100% {
+                --angle: 420deg;
+            }
         }
 
         /* Title */
@@ -111,9 +163,9 @@
     <!-- Blurred Background Overlay -->
     <div class="blurred-bg"></div>
 
-    <!-- Main TTS Container -->
+    <!-- Main TTS Container with Animated Border -->
     <div class="tts-container">
-        <h1 class="tts-title">TTS & Translation</h1>
+        <h1 class="tts-title">TTS Translator</h1>
 
         <!-- Text Input -->
         <textarea class="tts-input" id="textInput" placeholder="Type your text here..."></textarea>

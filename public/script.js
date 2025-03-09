@@ -135,10 +135,6 @@ playButton.addEventListener("click", async () => {
   }
 });
 
-/* ============================= */
-/* 🔹 ADDING BLUR & PARALLAX EFFECT */
-/* ============================= */
-
 // Select the TTS container
 const ttsContainer = document.querySelector(".glowing-border");
 
