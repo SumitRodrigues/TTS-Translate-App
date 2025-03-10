@@ -121,7 +121,8 @@ This project is **open-source** under the **MIT License**. Feel free to **contri
 🛠️ Contributions, issues, and feature requests are welcome!  
 💡 Let's collaborate to make **TTS & Translation tools even better!**  
 
-📧 **Reach out on LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/sumit-rodrigues/)  
+📧 **Reach out on LinkedIn:** 
+(https://www.linkedin.com/in/sumit-rodrigues/)  
 ---
 
 #TTS #Serverless #GoogleTranslate #WebSpeechAPI #TailwindCSS #Vercel #Frontend #Multilingual #DevOps #Accessibility 🚀
