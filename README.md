@@ -71,7 +71,7 @@
 ## **📜 How to Run Locally?**  
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/TTS-Translate-App.git
+git clone https://github.com/https://github.com/SumitRodrigues/TTS-Translate-App.git/
 cd TTS-Translate-App
 ```
 
@@ -121,13 +121,7 @@ This project is **open-source** under the **MIT License**. Feel free to **contri
 🛠️ Contributions, issues, and feature requests are welcome!  
 💡 Let's collaborate to make **TTS & Translation tools even better!**  
 
-📧 **Reach out on LinkedIn:** [Your LinkedIn Profile](YOUR_LINKEDIN_URL)  
-
----
-
-### **⚠️ Note:**  
-🚫 **Google Translate API has been disabled** due to **free tier limitations**, but the **TTS functionality and UI enhancements** are **fully working!** 🎤🚀  
-
+📧 **Reach out on LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/sumit-rodrigues/)  
 ---
 
 #TTS #Serverless #GoogleTranslate #WebSpeechAPI #TailwindCSS #Vercel #Frontend #Multilingual #DevOps #Accessibility 🚀
