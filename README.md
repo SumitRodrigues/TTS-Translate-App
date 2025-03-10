@@ -44,7 +44,7 @@
 ---
 
 ## **🌟 Live Demo**  
-🎤 **Try it Live:** **[Click Here]((https://tts-translate-a1rcllq69-sumit-rodrigues-projects.vercel.app/))**  
+🎤 **Try it Live:** **[Click Here](https://tts-translate-a1rcllq69-sumit-rodrigues-projects.vercel.app/)**  
 
 ---
 
