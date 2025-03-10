@@ -1,4 +1,4 @@
-### **🗣️ TTS & Translation App** 🌍  
+### **🗣️ Test-To-Speech Translator App** 🌍  
 **A simple, readily available, and modern Text-to-Speech (TTS) & Translation web app built for learning serverless functions, API integration, and modern UI design.**  
 
 ![Project Preview]
